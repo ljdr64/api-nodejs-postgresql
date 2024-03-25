@@ -7,7 +7,7 @@ const sequelize = new Sequelize(config.dbUrl, {
   dialect: 'postgres',
   logging: console.log,
   ssl: {
-    rejectUnauthorized: true,
+    rejectUnauthorized: false,
   },
 });
 
