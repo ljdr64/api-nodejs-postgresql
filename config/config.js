@@ -10,6 +10,7 @@ const config = {
   dbName: process.env.DB_NAME,
   dbPort: process.env.DB_PORT,
   dbUrl: process.env.DATABASE_URL,
+  dbCACert: process.env.RDS_CA_CERT,
 };
 
 module.exports = { config };

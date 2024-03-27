@@ -6,8 +6,11 @@ const setupModels = require('./../../db/models');
 const sequelize = new Sequelize(config.dbUrl, {
   dialect: 'postgres',
   logging: console.log,
-  ssl: {
-    rejectUnauthorized: false,
+  dialectOptions: {
+    ssl: {
+      rejectUnauthorized: true, // Requiere SSL
+      ca: config.dbCACert, // Utiliza el certificado SSL personalizado
+    },
   },
 });
 
