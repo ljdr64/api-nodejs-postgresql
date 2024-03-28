@@ -1,4 +1,5 @@
 const { Sequelize } = require('sequelize');
+const pg = require('pg');
 
 const { config } = require('./../../config/config');
 const setupModels = require('./../../db/models');
@@ -12,6 +13,7 @@ const sequelize = new Sequelize(config.dbUrl, {
       ca: config.dbCACert, // Utiliza el certificado SSL personalizado
     },
   },
+  dialectModule: pg,
 });
 
 setupModels(sequelize);
